@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="shortcut icon" href="../Image/Logo-pequeño.png" type="image/x-icon">
+  <title>Amazing Events</title>
+</head>
+<body>
+  <div id="app" class="layout">
+    <header class="vh10">
+      <nav class="d-flex justify-content-evenly container navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="img" href="#"> <img class="logopequeño" src="../Image/Logo-pequeño.png" alt="Logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link " href="../../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./UpcomingEvents.html">Upcoming Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./PastEvents.html">Past Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Stats.html">Stats</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class=" d-flex justify-content-center align-items-center">
+      <div v-for="card of filtrarPorId" :key="card._id" id="containerDetail" class=" contain-card-detail d-flex justify-content-center align-items-center col-md-6 shadow-lg p-3 mb-5 bg-body-tertiary rounded ">
+        <div class="card mb-3" style="max-width: 540px;">
+           <div class="row g-0">
+             <div>
+               <img class="col-12" v-bind:src="card.image" v-bind:alt="card.name">
+             </div>
+             <div>
+               <div class="card-body">
+                 <h5 class="card-title text-center">{{card.name}}</h5>
+                 <div class="py-2">
+                
+                       <ul>
+                           <li class="list">Date:{{card.date}}</li>
+                           <li class="list">Description: {{card.description}}</li>
+                           <li class="list">Category: {{card.category}}</li>
+                          <li class="list">Place: {{card.place}}</li>
+                          <li class="list">Capacity: {{card.capacity}}</li><li class="list">{{card.assistance ? "Assistance" : "Estimate"}}: {{card.assistance ? card.assistance :card.estimate}}</li>
+                          
+                           <li class="list">Price: ${{card.price}}</li>
+                       </ul>
+                   </div>
+               </div>
+             </div>
+           </div>
+           </div>
+    </div>
+    </main>
+    <footer class="vh10 bg-body-tertiary  container">
+      <section class="d-flex justify-content-evenly align-items-center">   
+        <div class="d-flex justify-content-evenly align-items-center navbar navbar-expand-lg m-3 " style="width: 300px;">
+          <a href="https://www.instagram.com/"><img class="icono-footer rounded-circle " src="../Image/Instagram-Logo.jpg" alt="Icono-Instagram"></a>
+          <a href="https://es-la.facebook.com/"><img class="icono-footer rounded-circle " src="../Image/124010.png" alt="Icono-Facebock"></a>
+          <a href="https://www.whatsapp.com/"><img class="icono-footer rounded-circle " src="../Image/124034.png" alt="I-wsp"></a>
+        </div>
+        <h6 class="text-center " style="width: 300px;" >Ayelen Ceresola - Cohort 47</h6>   
+      </section>
+    </footer>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="../archivos.js/detail.js"></script>
+</body>
+</html>
